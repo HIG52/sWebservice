@@ -44,6 +44,8 @@ class PostsRepositoryTest {
 
         //then
         Posts posts = postsList.get(0);
-
+        assertThat(posts.getTitle()).isEqualTo("테스트 제목");
+        assertThat(posts.getContent()).isEqualTo("테스트 내용");
+        assertThat(posts.getAuthor()).isEqualTo("테스트 작성자");
     }
 }
