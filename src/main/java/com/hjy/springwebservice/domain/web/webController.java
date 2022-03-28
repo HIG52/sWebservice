@@ -1,4 +1,4 @@
-package com.hjy.springwebservice.web;
+package com.hjy.springwebservice.domain.web;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;

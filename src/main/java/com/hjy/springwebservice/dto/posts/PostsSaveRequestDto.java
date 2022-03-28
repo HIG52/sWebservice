@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class PostsRepositoryDto {
+public class PostsSaveRequestDto {
     private String title;
     private String content;
     private String author;
@@ -20,5 +20,6 @@ public class PostsRepositoryDto {
                 .author(author)
                 .build();
     }
+
 
 }
