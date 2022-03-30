@@ -1,19 +1,8 @@
 spring:
-  profiles:       #어플리케이션 실행시 파라미터로 넘어온게 없으면 active 값을 보게된다. 운영환경에서는 real 혹은 production등과 같은 profile을 보도록 jar 실행시점에 파라미터를 변경한다.
-    active: local # 기본 환경 선택
-
-# local 환경
-#  Tip)
-  #application.yml 에서 --- 를 기준으로 상단은 공통 영역이며, 하단이 각 profile의 설정 영역입니다.
-  #공통영역의 값은 각 profile환경에 동일한 설정이 있으면 무시되고, 없으면 공통영역의 설정값이 사용됩니다.
-  #그렇다보니 공통영역에 설정값을 넣는것에 굉장히 주의가 필요합니다.
-  #만약 공통영역에 jpa.hibernate.ddl-auto:create-drop가 있고 운영 profile에 해당 설정값이 없다면 운영환경에서 배포시 모든 테이블이 drop -> create 됩니다.
-  #이때문에 datasource, table 등과 같은 옵션들은 공통영역엔 두지 않고 각 profile마다 별도로 두는것을 추천합니다.
-  ---
+  profiles:
+    active: local
+---
 spring:
-  profiles: local
-  datasource:
-    data: classpath:data-h2.sql # 시작할때 실행시킬 script
   jpa:
     show-sql: true
     hibernate:
@@ -21,4 +10,11 @@ spring:
   h2:
     console:
       enabled: true
+  config:
+    activate:
+      on-profile: local
+  sql:
+    init:
+      data-locations: classpath:h2Start.sql
+      mode: never
 
