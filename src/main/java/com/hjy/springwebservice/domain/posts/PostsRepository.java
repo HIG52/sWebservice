@@ -1,6 +1,9 @@
 package com.hjy.springwebservice.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.stream.Stream;
 
 //ibatis/Mybatis 등에서 Dao라고 불리느 DB Layer접근자
 //JPA에선 Repository라고 부르며 인터페이스로 생성
@@ -8,4 +11,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 //특별히 @Repository를 추가할필요도 없음
 public interface PostsRepository extends JpaRepository<Posts, Long> {
 
+    @Query("SELECT p "+
+            "FROM Posts p "+
+            "ORDER BY p.id DESC ")
+    Stream<Posts> findAllDesc();
 }
