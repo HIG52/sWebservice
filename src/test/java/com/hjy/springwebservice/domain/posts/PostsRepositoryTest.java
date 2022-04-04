@@ -23,8 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 @ExtendWith(SpringExtension.class)
-@DataJpaTest
-//@SpringBootTest
+@SpringBootTest
 class PostsRepositoryTest {
 
     @Autowired
@@ -38,7 +37,7 @@ class PostsRepositoryTest {
          */
         postsRepository.deleteAll();
     }
-
+/*
     @Test
     @DisplayName("저장된 멤버가 제대로 조회 되는지 확")
     public void posts_list(){
@@ -59,6 +58,7 @@ class PostsRepositoryTest {
         assertThat(posts.getAuthor()).isEqualTo("test");
 
     }
+*/
 
     @Test
     public void Save_loading(){
