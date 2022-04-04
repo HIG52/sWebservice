@@ -37,7 +37,10 @@ class PostsRepositoryTest {
          */
         postsRepository.deleteAll();
     }
-/*
+
+
+
+/*테스트 코드 나중에 작성하기
     @Test
     @DisplayName("저장된 멤버가 제대로 조회 되는지 확")
     public void posts_list(){
